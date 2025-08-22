@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonProps } from "@/interfaces"; // This is becoming too much
+import type { ButtonProps } from "@/interfaces";
 
 const Button: React.FC<ButtonProps> = ({ title, action }) => {
   return (
