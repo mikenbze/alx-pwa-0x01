@@ -1,25 +1,19 @@
-// alx-movie-app/interfaces.ts
-
-export interface ButtonProps {
-  title: string;
-  action: () => void;
-}
-
+// Movie-related types
 export interface MoviesProps {
   id?: string;
   titleText?: {
     text: string;
   };
+  releaseYear?: {
+    year: string | number;
+  };
   primaryImage?: {
     url: string;
   };
-  releaseYear?: {
-    year: number;
-  };
 }
 
-export interface MovieCardProps {
+// Button props
+export interface ButtonProps {
   title: string;
-  posterImage: string;
-  releaseYear: number | string;
+  action: () => void;
 }

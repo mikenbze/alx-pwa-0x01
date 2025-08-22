@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonProps } from "@/interfaces";
+import { ButtonProps } from "@/interfaces"; // Make sure path matches exactly
 
 const Button: React.FC<ButtonProps> = ({ title, action }) => {
   return (
