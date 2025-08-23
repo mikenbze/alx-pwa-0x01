@@ -1,14 +1,19 @@
+// pages/_app.tsx
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-
+import { ApolloProvider } from "@apollo/client";
+import client from "@/graphql/apolloClient";
 import Layout from "@/components/layout/Layout";
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  )
+    <ErrorBoundary>
+      <ApolloProvider client={client}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ApolloProvider>
+    </ErrorBoundary>
+  );
 }
